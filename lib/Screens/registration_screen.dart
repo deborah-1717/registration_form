@@ -2,6 +2,7 @@
 
 import 'package:flutter/material.dart';
 
+
 class  RegistrationScreen extends StatefulWidget{
   _RegistrationScreenState createState() => _RegistrationScreenState();
 }
@@ -28,20 +29,52 @@ Widget build(BuildContext context){
         TextField(
           controller: 
           firstNameController,
+          decoration: 
+          InputDecoration(
+            labelText: "First Name"
+          ),
         ),
                   TextField(
                     controller:
                     lastNameController,
-                  ),
-        TextField(
+                    decoration: 
+                    const InputDecoration(
+                      labelText: "Last Name"
+                    )
+                  ),TextField(
           controller:emailController,
             decoration: const
            InputDecoration(
             labelText: "Email Address"
            ),
-        
-        
+           
+           ),
+        const SizedBox(height: 30,),
+        GestureDetector(
+          onTap: () {
+            setState(() {
+              isRegistered = !isRegistered;
+            
+            });
+          },
+          child: Container(
+            padding: EdgeInsets.all(20),
+      decoration: BoxDecoration(
+                    color: isRegistered? Colors.green:Colors.blue,
+                          borderRadius: BorderRadius.
+                          circular(10),
+
+
+      ),
+      child: Text(
+        isRegistered ? "Registeration Successful": "Register Me",
+        style: TextStyle(
+          color: Colors.white,
+
         ),
+        ),
+          ),
+        )
       ],
     ),
     ),
