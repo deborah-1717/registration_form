@@ -70,6 +70,7 @@ Widget build(BuildContext context){
         isRegistered ? "Registeration Successful": "Register Me",
         style: TextStyle(
           color: Colors.white,
+          fontSize: 20
 
         ),
         ),
