@@ -1,8 +1,7 @@
 
 
 import 'package:flutter/material.dart';
-
-
+import 'details_screen.dart';
 class  RegistrationScreen extends StatefulWidget{
   _RegistrationScreenState createState() => _RegistrationScreenState();
 }
@@ -75,7 +74,24 @@ Widget build(BuildContext context){
         ),
         ),
           ),
-        )
+
+        ),
+
+        const SizedBox(height: 30),
+        if(isRegistered)
+        ElevatedButton(onPressed:(){
+Navigator.push(context,
+ MaterialPageRoute(builder: (context)
+ => DetailsScreen(
+  firstname: firstNameController.text,
+  lastname: lastNameController.text,
+  email: emailController.text,
+ )));
+        },
+         child:const Text( "view registration details")
+         )
+
+
       ],
     ),
     ),
